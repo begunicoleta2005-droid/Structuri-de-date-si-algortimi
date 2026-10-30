@@ -1,1 +1,77 @@
+//Binary search: Find a target
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int left = 0;
+        int right = nums.size() - 1;
 
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (nums[mid] == target) {
+                return mid;
+            }
+            else if (nums[mid] < target) {
+                left = mid + 1;
+            }
+            else {
+                right = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+};
+
+
+
+//Search Insert Position 
+class Solution {
+public:
+    int searchInsert(vector<int>& nums, int target) {
+        int left = 0;
+        int right = nums.size() - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+
+            if (nums[mid] == target) {
+                return mid;
+            }
+            else if (nums[mid] < target) {
+                left = mid + 1;
+            }
+            else {
+                right = mid - 1;
+            }
+        }
+
+        return left;
+    }
+};
+
+
+//Sort Array By Parity
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        int left = 0;
+        int right = nums.size() - 1;
+
+        while (left < right) {
+            if (nums[left] % 2 != 0 && nums[right] % 2 == 0) {
+                swap(nums[left], nums[right]);
+            }
+
+            if (nums[left] % 2 == 0) {
+                left++;
+            }
+
+            if (nums[right] % 2 != 0) {
+                right--;
+            }
+        }
+
+        return nums;
+    }
+};
