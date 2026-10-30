@@ -1,4 +1,4 @@
-//Array-uri(1480. Running Sum of 1d Array)
+//1480. Running Sum of 1d Array
 
 class Solution {
     public int[] runningSum(int[] nums) {
@@ -9,3 +9,6 @@ class Solution {
         return nums;
     }
 }
+
+
+//27. Remove Element
